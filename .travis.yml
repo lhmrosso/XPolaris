@@ -2,4 +2,6 @@
 
 language: R
 cache: packages
-before_install: R -e 'source("https://install-github.me/r-lib/remotes")'
+before_install: 
+  - R -e 'install.packages("devtools")'
+  - R -e 'devtools::install_deps(dep = T)'

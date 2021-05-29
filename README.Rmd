@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![Travis build status](https://travis-ci.com/lhmrosso/XPolaris.svg?branch=master)](https://travis-ci.com/lhmrosso/XPolaris)
 <!-- badges: end -->
 
-<img src="man/figures/xpolaris.png" height="250" align="right"/>
+<img src="man/figures/xpolaris.png" height="300" align="right"/>
 
 The _XPolaris_ package aims to facilitate the access to detailed soil data at any geographical location within the United States (US). The [__POLARIS__](http://hydrology.cee.duke.edu/POLARIS/) database comprises a 30-meter probabilistic soil series map of the contiguous United States (US). It represents an optimization of the Soil Survey Geographic (SSURGO) database, circumventing issues of spatial disaggregation, harmonizing, and filling spatial gaps [@Chan16;@Chan19]. Without the need of advanced skills on R-programming, users will be able to convert raster data into traditional spreadsheet format for further data analysis. 
 

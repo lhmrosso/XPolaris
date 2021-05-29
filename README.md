@@ -9,7 +9,7 @@
 status](https://travis-ci.com/lhmrosso/XPolaris.svg?branch=master)](https://travis-ci.com/lhmrosso/XPolaris)
 <!-- badges: end -->
 
-<img src="man/figures/xpolaris.png" height="250" align="right"/>
+<img src="man/figures/xpolaris.png" height="300" align="right"/>
 
 The *XPolaris* package aims to facilitate the access to detailed soil
 data at any geographical location within the United States (US). The

@@ -2,5 +2,5 @@
 
 language: R
 cache: packages
-install: 
-  - R -e 'install.packages("sf", dependencies = TRUE)'
+apt_packages:
+  - libudunits2-dev

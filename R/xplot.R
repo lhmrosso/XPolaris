@@ -73,7 +73,7 @@ xplot <- function(locations,
     tidyr::gather('Corner','Values', -squares) %>% # Boundaries
     tidyr::separate(Values, into=c('long','lat'), sep='_') %>%
     dplyr::arrange(squares, Corner) %>% dplyr::ungroup() %>%
-    dplyr::mutate_at(vars(long,lat), ~as.numeric(.))
+    dplyr::mutate_at(dplyr::vars(long,lat), ~as.numeric(.))
   
   temp2 = ggplot2::ggplot()+
     ggplot2::geom_hline(yintercept=c(25:50), size=0.3, linetype=1, color='gray90')+

@@ -7,29 +7,26 @@
 xplot(locations, localPath = getwd())
 }
 \arguments{
-\item{locations}{A data.frame with location information.}
+\item{locations}{A \code{data.frame} object with location information.}
 
-\item{localPath}{Path in the user's machine to download the images., Default: getwd()}
+\item{localPath}{Path in the user's machine to store the images. Default: getwd()}
 }
 \value{
-A ggplot object and an exported .jpeg image with the locations map.
+It returns a \code{ggplot} object and exports a \code{.jpeg} image with the locations map. Images will be saved under a new directory, called \code{POLARISOut}. The directory will be created within \code{localPath} and also used to store the raster images from the POLARIS database.
 }
 \description{
 Identifies the images from which locations must be accessed.
 }
 \details{
-DETAILS
+This function is useful for checking if locations were correctly informed, but its output is not required by \code{ximages} or \code{xsoil}. If a given location falls in the border of an image (round coordinates), the function will make sure a minimum number of images is downloaded.
 }
 \examples{
 \dontrun{
-if(interactive()){
- #EXAMPLE1
- }
+
+# df_test <- exkansas
+# xplot(df_test)
 }
 }
 \seealso{
-\code{\link[tidyr]{gather}},\code{\link[tidyr]{pivot_wider}},\code{\link[tidyr]{nest}},\code{\link[tidyr]{c("nest", "nest", "nest")}},\code{\link[tidyr]{separate}}
-\code{\link[dplyr]{mutate}},\code{\link[dplyr]{case_when}},\code{\link[dplyr]{select}},\code{\link[dplyr]{group_by}},\code{\link[dplyr]{filter}},\code{\link[dplyr]{ranking}},\code{\link[dplyr]{arrange}},\code{\link[dplyr]{mutate_all}}
-\code{\link[purrr]{map}}
-\code{\link[ggplot2]{ggplot}},\code{\link[ggplot2]{geom_abline}},\code{\link[ggplot2]{geom_polygon}},\code{\link[ggplot2]{map_data}},\code{\link[ggplot2]{aes}},\code{\link[ggplot2]{geom_label}},\code{\link[ggplot2]{scale_continuous}},\code{\link[ggplot2]{coord_map}},\code{\link[ggplot2]{theme}},\code{\link[ggplot2]{margin}},\code{\link[ggplot2]{ggsave}}
+\code{\link[XPolaris]{ximages}},\code{\link[XPolaris]{xsoil}}
 }

@@ -7,30 +7,27 @@
 xsoil(ximages_output, localPath = getwd())
 }
 \arguments{
-\item{ximages_output}{PARAM_DESCRIPTION}
+\item{ximages_output}{The \code{data.frame} output from \code{ximages} function.}
 
-\item{localPath}{PARAM_DESCRIPTION, Default: getwd()}
+\item{localPath}{Path in the user's machine to store the images. Default: getwd()}
 }
 \value{
-OUTPUT_DESCRIPTION
+It returns a \code{data.frame} object and exports a \code{.csv} file with the soil data. The \code{.csv} file will be save under the \code{POLARISOut} directory.
 }
 \description{
-FUNCTION_DESCRIPTION
+Extracting soil data from downloaded raster images.
 }
 \details{
-DETAILS
+This function must be executed after downloading the images (excuting the \code{ximages} function).
 }
 \examples{
 \dontrun{
-if(interactive()){
- #EXAMPLE1
- }
+
+# df_test <- exkansas
+# df_ximages <- ximages(df_test)
+# df_xsoil <- ximages(df_ximages)
 }
 }
 \seealso{
-\code{\link[dplyr]{mutate}},\code{\link[dplyr]{select}},\code{\link[dplyr]{group_by}},\code{\link[dplyr]{case_when}}
-\code{\link[purrr]{map}},\code{\link[purrr]{map2}}
-\code{\link[sf]{st_as_sf}}
-\code{\link[raster]{raster}},\code{\link[raster]{extract}}
-\code{\link[tidyr]{nest}},\code{\link[tidyr]{pivot_wider}}
+\code{\link[XPolaris]{xplot}},\code{\link[XPolaris]{ximages}}
 }

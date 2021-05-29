@@ -21,3 +21,14 @@ Suggests:
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)
+Imports:
+    dplyr,
+    forcats,
+    ggplot2,
+    magrittr,
+    mapproj,
+    purrr,
+    raster,
+    sf,
+    tidyr,
+    utils

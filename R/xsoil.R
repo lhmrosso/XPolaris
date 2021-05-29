@@ -1,44 +1,35 @@
 #' @title xsoil
-#' @description FUNCTION_DESCRIPTION
-#' @param ximages_output PARAM_DESCRIPTION
-#' @param localPath PARAM_DESCRIPTION, Default: getwd()
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
+#' @description Extracting soil data from downloaded raster images.
+#' @param ximages_output The `data.frame` output from `ximages` function.
+#' @param localPath Path in the user's machine to store the images. Default: getwd()
+#' @return It returns a `data.frame` object and exports a `.csv` file with the soil data. The `.csv` file will be save under the `POLARISOut` directory.
+#' @details This function must be executed after downloading the images (excuting the `ximages` function).
 #' @examples 
 #' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
+#' 
+#' # df_test <- exkansas
+#' # df_ximages <- ximages(df_test)
+#' # df_xsoil <- ximages(df_ximages)
 #' }
 #' @seealso 
-#'  \code{\link[dplyr]{mutate}},\code{\link[dplyr]{select}},\code{\link[dplyr]{group_by}},\code{\link[dplyr]{case_when}}
-#'  \code{\link[purrr]{map}},\code{\link[purrr]{map2}}
-#'  \code{\link[sf]{st_as_sf}}
-#'  \code{\link[raster]{raster}},\code{\link[raster]{extract}}
-#'  \code{\link[tidyr]{nest}},\code{\link[tidyr]{pivot_wider}}
+#'  \code{\link[XPolaris]{xplot}},\code{\link[XPolaris]{ximages}}
 #' @rdname xsoil
 #' @export 
-#' @importFrom dplyr mutate select ungroup case_when
-#' @importFrom purrr map map2
 #' @importFrom sf st_as_sf
+#' @importFrom magrittr "%>%" 
+#' @importFrom purrr map map2
+#' @importFrom utils data write.csv
 #' @importFrom raster raster extract
 #' @importFrom tidyr unnest pivot_wider
+#' @importFrom dplyr mutate select ungroup case_when
+#' 
 xsoil <- function(ximages_output,
                   localPath = getwd()){
-
-  suppressMessages(library(sf))
-  suppressMessages(library(raster))
-
-  suppressMessages(library(tidyr))
-  suppressMessages(library(dplyr))
-  suppressMessages(library(purrr))
-  suppressMessages(library(forcats))
-
-
-  ###
-  ### EXTRACTING VALUES
-  ###
-
+  
+  # Binding variables locally to the function (R CMD check)
+  coordinates <- local_file <- shape <- extracts <- variables <- 
+    statistics <- layersdepths <- Values <- . <- NULL
+  
   temp1 = ximages_output %>%
     dplyr::mutate(shape = coordinates %>% # Converting coordinates to shape
                     purrr::map(~sf::st_as_sf(., coords = c('long','lat'),
@@ -57,12 +48,7 @@ xsoil <- function(ximages_output,
 
     dplyr::select(variables, statistics, layersdepths, coordinates) %>%
     tidyr::unnest(cols = coordinates) %>% dplyr::ungroup() %>%
-
-
-    ###
-    ### CONVERTING UNITS
-    ###
-
+    
     dplyr::mutate(Values = dplyr::case_when(
       variables == 'om' ~ 10^Values,
       #variables == 'alpha' ~ (10^Values)/10.2,
@@ -75,18 +61,10 @@ xsoil <- function(ximages_output,
                        values_from = Values) %>%
 
     tidyr::unnest(colnames(.))
-
-
-  ###
-  ### EXPORTING A .CSV
-  ###
-
+  
   write.csv(temp1, paste0(localPath,'/POLARISOut/','xsoil_data.csv'),
             row.names = FALSE, na = '')
-
-
-  ### Data.frame
+  
   return(temp1)
-
 
 }

@@ -7,34 +7,32 @@
 ximages(locations, variables, statistics, layersdepths, localPath = getwd())
 }
 \arguments{
-\item{locations}{PARAM_DESCRIPTION}
+\item{locations}{A \code{data.frame} object with location information.}
 
-\item{variables}{PARAM_DESCRIPTION}
+\item{variables}{A \code{vector} with soil variable codes. See the details section.}
 
-\item{statistics}{PARAM_DESCRIPTION}
+\item{statistics}{A \code{vector} with the distribution summary options. See the details section.}
 
-\item{layersdepths}{PARAM_DESCRIPTION}
+\item{layersdepths}{A \code{vector} with the soil depth codes requested by the user. See the details.}
 
-\item{localPath}{PARAM_DESCRIPTION, Default: getwd()}
+\item{localPath}{Path in the user's machine to store the images. Default: getwd()}
 }
 \value{
-OUTPUT_DESCRIPTION
+This function simply downloads the images from the POLARIS database, according to the user request. Images are saved under a new directory, called \code{POLARISOut}, with the \code{localPath}.
 }
 \description{
-FUNCTION_DESCRIPTION
+Downloading raster images from the POLARIS database.
 }
 \details{
-DETAILS
+The 13 \code{variable} code options are: \code{ph} (soil water pH), \code{om} (organic matter), \code{clay}, \code{sand}, \code{silt}, \code{bd} (bulk density), \code{hb} (bubbling pressure), \code{n} (pore size distribution), \code{alpha} (scale parameter inversely proportional to mean pore diameter), \code{ksat} (saturated hydraulic conductivity), \code{lambda} (pore size distribution index), \code{theta_r} (residual soil water content), and \code{theta_s} (saturated soil water content). There are five options of summary statistics: \code{mean}, \code{mode}, median (\code{p50}), five (\code{p5}) and 95 (\code{p95}) percentiles. There are six options of soil depth layers: \code{0-5}, \code{5-15}, \code{15-30}, \code{30-60}, \code{60-100}, and \code{100-200} cm. For more details on variable units please check package documentation.
 }
 \examples{
 \dontrun{
-if(interactive()){
- #EXAMPLE1
- }
+
+# df_test <- exkansas
+# ximages(df_test)
 }
 }
 \seealso{
-\code{\link[tidyr]{gather}},\code{\link[tidyr]{pivot_wider}},\code{\link[tidyr]{nest}},\code{\link[tidyr]{c("nest", "nest", "nest")}},\code{\link[tidyr]{separate}}
-\code{\link[dplyr]{mutate}},\code{\link[dplyr]{case_when}},\code{\link[dplyr]{select}},\code{\link[dplyr]{group_by}},\code{\link[dplyr]{filter}},\code{\link[dplyr]{ranking}},\code{\link[dplyr]{mutate-joins}}
-\code{\link[purrr]{map}},\code{\link[purrr]{map2}}
+\code{\link[XPolaris]{xplot}},\code{\link[XPolaris]{xsoil}}
 }

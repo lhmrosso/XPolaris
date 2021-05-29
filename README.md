@@ -9,12 +9,17 @@
 status](https://travis-ci.com/lhmrosso/XPolaris.svg?branch=master)](https://travis-ci.com/lhmrosso/XPolaris)
 <!-- badges: end -->
 
-The goal of XPolaris is to facilitate the access to detailed soil data
-at any geographical location within the United States (US). Without the
-need of advanced skills on R-programming, users will be able to convert
-raster data from the POLARIS database into traditional spreadsheet
-format \[i.e., Comma-Separated Values (CSV)\], easy to manipulate and
-process for further data analyses.
+<img src="man/figures/xpolaris.png" height="250" style="float:right; padding-left:30px"/>
+
+The *XPolaris* package aims to facilitate the access to detailed soil
+data at any geographical location within the United States (US). The
+[**POLARIS**](http://hydrology.cee.duke.edu/POLARIS/) database comprises
+a 30-meter probabilistic soil series map of the contiguous United States
+(US). It represents an optimization of the Soil Survey Geographic
+(SSURGO) database, circumventing issues of spatial disaggregation,
+harmonizing, and filling spatial gaps \[1, 2\]. Without the need of
+advanced skills on R-programming, users will be able to convert raster
+data into traditional spreadsheet format for further data analysis.
 
 ## Installation
 
@@ -34,36 +39,61 @@ devtools::install_github("lhmrosso/XPolaris")
 
 ## Example
 
-This is a basic example which shows you how to solve a common problem:
+After loading the package, users must create a `data.frame` object
+containing three columns (`ID`, `lat`, and `long`). Locations IDs must
+be unique alphanumerical identifiers, and latitude and longitude
+coordinates must be supplied as decimal degrees. The package comes with
+example locations in the Kansas State, assigned to the `exkansas`
+object.
 
 ``` r
 library(XPolaris)
-## basic example code
+print(exkansas)
+#>           ID     lat     long
+#> 1    Scandia 39.8291 -97.8458
+#> 2 Belleville 39.8158 -97.6720
+#> 3     Ottawa 38.5398 -95.2446
 ```
 
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
+The package is composed by three R functions:  
+1) `xplot`: generates a map displaying the rater images from which
+locations will be retrieved;  
+2) `ximages`: downloads the images from the POLARIS database to the
+user’s local machine;  
+3) `xsoil`: extracts the soil data from raster images and creater a
+`data.frame` object.
 
 ``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
+# Generates plot
+xplot(exkansas)
+
+# Downloading POLARIS images
+df_ximages <- ximages(exkansas)
+
+# Retrieving raster soil data
+df_xsoil <- xsoil(df_ximages)
 ```
 
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
+## References
 
-You can also embed plots, for example:
+<div id="refs" class="references csl-bib-body">
 
-<img src="man/figures/README-pressure-1.png" width="100%" />
+<div id="ref-Chan16" class="csl-entry">
 
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.
+1\. Chaney NW, Wood EF, McBratney AB, Hempel JW, Nauman TW, Brungard CW,
+et al. POLARIS: A 30-meter probabilistic soil series map of the
+contiguous united states. Geoderma. 2016;274:54–67.
+doi:<https://doi.org/10.1016/j.geoderma.2016.03.025>.
+
+</div>
+
+<div id="ref-Chan19" class="csl-entry">
+
+2\. Chaney NW, Minasny B, Herman JD, Nauman TW, Brungard CW, Morgan CLS,
+et al. POLARIS soil properties: 30-m probabilistic maps of soil
+properties over the contiguous united states. Water Resources Research.
+2019;55:2916–38. doi:<https://doi.org/10.1029/2018WR022797>.
+
+</div>
+
+</div>

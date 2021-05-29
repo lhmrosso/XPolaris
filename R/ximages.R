@@ -1,54 +1,43 @@
 #' @title ximages
-#' @description FUNCTION_DESCRIPTION
-#' @param locations PARAM_DESCRIPTION
-#' @param variables PARAM_DESCRIPTION
-#' @param statistics PARAM_DESCRIPTION
-#' @param layersdepths PARAM_DESCRIPTION
-#' @param localPath PARAM_DESCRIPTION, Default: getwd()
-#' @return OUTPUT_DESCRIPTION
-#' @details DETAILS
+#' @description Downloading raster images from the POLARIS database.
+#' @param locations A `data.frame` object with location information.
+#' @param variables A `vector` with soil variable codes. See the details section.
+#' @param statistics A `vector` with the distribution summary options. See the details section.
+#' @param layersdepths A `vector` with the soil depth codes requested by the user. See the details.
+#' @param localPath Path in the user's machine to store the images. Default: getwd()
+#' @return This function simply downloads the images from the POLARIS database, according to the user request. Images are saved under a new directory, called `POLARISOut`, with the `localPath`.
+#' @details The 13 `variable` code options are: `ph` (soil water pH), `om` (organic matter), `clay`, `sand`, `silt`, `bd` (bulk density), `hb` (bubbling pressure), `n` (pore size distribution), `alpha` (scale parameter inversely proportional to mean pore diameter), `ksat` (saturated hydraulic conductivity), `lambda` (pore size distribution index), `theta_r` (residual soil water content), and `theta_s` (saturated soil water content). There are five options of summary statistics: `mean`, `mode`, median (`p50`), five (`p5`) and 95 (`p95`) percentiles. There are six options of soil depth layers: `0-5`, `5-15`, `15-30`, `30-60`, `60-100`, and `100-200` cm. For more details on variable units please check package documentation.
 #' @examples 
 #' \dontrun{
-#' if(interactive()){
-#'  #EXAMPLE1
-#'  }
+#' 
+#' # df_test <- exkansas
+#' # ximages(df_test)
 #' }
 #' @seealso 
-#'  \code{\link[tidyr]{gather}},\code{\link[tidyr]{pivot_wider}},\code{\link[tidyr]{nest}},\code{\link[tidyr]{c("nest", "nest", "nest")}},\code{\link[tidyr]{separate}}
-#'  \code{\link[dplyr]{mutate}},\code{\link[dplyr]{case_when}},\code{\link[dplyr]{select}},\code{\link[dplyr]{group_by}},\code{\link[dplyr]{filter}},\code{\link[dplyr]{ranking}},\code{\link[dplyr]{mutate-joins}}
-#'  \code{\link[purrr]{map}},\code{\link[purrr]{map2}}
+#'  \code{\link[XPolaris]{xplot}},\code{\link[XPolaris]{xsoil}}
 #' @rdname ximages
 #' @export 
+#' @importFrom purrr map map2
+#' @importFrom magrittr "%>%" 
 #' @importFrom tidyr gather pivot_wider unnest nest separate
 #' @importFrom dplyr mutate case_when select group_by ungroup filter row_number left_join
-#' @importFrom purrr map map2
+
 ximages <- function(locations,
                     variables,
                     statistics,
                     layersdepths,
                     localPath = getwd()){
-
-  suppressMessages(library(tidyr))
-  suppressMessages(library(dplyr))
-  suppressMessages(library(purrr))
-  suppressMessages(library(forcats))
-
-  if(!is.data.frame(locations))
-    stop('Input must be a data.frame object')
-
-  if(length(unique(locations$ID)) < nrow(locations))
-    stop('Please use unique IDs for your locations')
-
-
-  ###
-  ### IDENTIFY MINIMUM NUMBER OF SQUARES
-  ###
-
+  
+  # Binding variables locally to the function (R CMD check)
+  ID <- Value <- Up <- Lw <- Coord <- Alt1 <- Alt2 <- Alt1_lat <- 
+    Alt1_long <- Alt2_lat <- Alt2_long <- img1 <- img2 <- img3 <- 
+    img4 <- . <- Opt <- Unique <- lim <- lat_range <- long_range <- 
+    lat <- long <- squares <- coordinates <- images <- local_file <- 
+    local_folder <- downloaded <- online_file <- NULL
+  
   temp1 = locations %>%
     tidyr::gather('Coord','Value',-ID) %>%
     dplyr::mutate(Value = as.numeric(Value)) %>%
-
-    # Upper and lower square boundaries (one-by-one lat-long)
     dplyr::mutate(Up = ceiling(Value), Lw = floor(Value)) %>%
 
     dplyr::mutate( # Just in case a locations falls in square border
@@ -81,12 +70,7 @@ ximages <- function(locations,
     dplyr::mutate(squares = dplyr::row_number()) %>%
 
     dplyr::select(squares,lat_range,long_range,coordinates)
-
-
-  ###
-  ### MINIMUM NUMBER OF IMAGES TO RETRIEVE THE DATA
-  ###
-
+  
   temp2 = temp1 %>% # All data to be extracted
     dplyr::left_join(expand.grid(squares = temp1$squares,
                                  variables = variables,
@@ -103,24 +87,16 @@ ximages <- function(locations,
     dplyr::select(squares,lat_range,long_range, # Square information
                   images,variables,statistics,layersdepths, # Image information
                   coordinates,local_file) # Location information (nested tibble)
-
-
-  ###
-  ### CREATING LOCAL FOLDERS TO SAVE THE IMAGES
-  ###
-
+  
   temp2 %>%
     dplyr::select(variables,statistics,layersdepths) %>% unique() %>% dplyr::mutate(
-      local_folder = paste0(localPath,'/POLARISOut/', statistics,'/',variables,'/',layersdepths)) %>%
+      local_folder = paste0(localPath,'/POLARISOut/', statistics,'/',
+                            variables,'/',layersdepths)) %>%
 
     # If the directories already exist they will not be overwritten with new ones
-    dplyr::mutate(create = local_folder %>% purrr::map(~dir.create(., recursive = T, showWarnings = F)))
-
-
-  ###
-  ### DOWNLOADING THE MISSING IMAGES
-  ###
-
+    dplyr::mutate(create = local_folder %>% purrr::map(~dir.create(., recursive = T, 
+                                                                   showWarnings = F)))
+  
   temp3 = temp2 %>% dplyr::select(local_file,squares,lat_range,long_range,
                                   images,variables,statistics,layersdepths) %>%
 
@@ -138,10 +114,7 @@ ximages <- function(locations,
     dplyr::mutate(temp3, download = purrr::map2(
       .x = online_file, .y = local_file, # Paths
       .f = ~download.file(url = .x, destfile = .y)))
-
-
-  ### Tibble
+  
   return(temp2)
-
 
 }

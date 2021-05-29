@@ -3,4 +3,5 @@
 language: R
 cache: packages
 apt_packages:
+  - libgdal1i
   - libudunits2-dev

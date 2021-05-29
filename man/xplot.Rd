@@ -12,7 +12,7 @@ xplot(locations, localPath = getwd())
 \item{localPath}{Path in the user's machine to store the images. Default: getwd()}
 }
 \value{
-It returns a \code{ggplot} object and exports a \code{.jpeg} image with the locations map. Images will be saved under a new directory, called \code{POLARISOut}. The directory will be created within \code{localPath} and also used to store the raster images from the POLARIS database.
+It returns a \code{ggplot} object and exports a \code{.jpeg} image with the locations map. Images will be saved under a new directory, called \code{POLARISOut}. The directory will be created within \code{localPath} and used to store the raster images from the POLARIS database.
 }
 \description{
 Identifies the images from which locations must be accessed.

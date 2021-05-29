@@ -2,7 +2,7 @@
 #' @description Identifies the images from which locations must be accessed.
 #' @param locations A `data.frame` object with location information.
 #' @param localPath Path in the user's machine to store the images. Default: getwd()
-#' @return It returns a `ggplot` object and exports a `.jpeg` image with the locations map. Images will be saved under a new directory, called `POLARISOut`. The directory will be created within `localPath` and also used to store the raster images from the POLARIS database.
+#' @return It returns a `ggplot` object and exports a `.jpeg` image with the locations map. Images will be saved under a new directory, called `POLARISOut`. The directory will be created within `localPath` and used to store the raster images from the POLARIS database.
 #' @details This function is useful for checking if locations were correctly informed, but its output is not required by `ximages` or `xsoil`. If a given location falls in the border of an image (round coordinates), the function will make sure a minimum number of images is downloaded.
 #' @examples 
 #' \dontrun{

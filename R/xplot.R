@@ -90,14 +90,14 @@ xplot <- function(locations,
       fill='red', size=0, alpha=0.5)+
 
     ggplot2::geom_text(data = data.frame(X=rep(-127.5,6), Y=seq(25,50,5), 
-                                         lab=paste0(seq(25,50,5),'~degree*N')),
+                                         lab=paste0(seq(25,50,5),' N')),
                        ggplot2::aes(x = X, y = Y, label = lab), 
-                       size=2.75, hjust=0.5, angle=0, parse = T)+
+                       size=2.75, hjust=0.5, angle=0)+
     
     ggplot2::geom_text(data = data.frame(X=seq(-125,-70,5), Y=rep(23,12), 
-                                         lab=paste0(abs(seq(-125,-70,5)),'~degree*W')),
+                                         lab=paste0(abs(seq(-125,-70,5)),' W')),
                        ggplot2::aes(x = X, y = Y, label = lab), 
-                       size=2.75, hjust=0.5, angle=0, parse = T)+
+                       size=2.75, hjust=0.5, angle=0)+
 
     ggplot2::scale_x_continuous(limits=c(-129.5,-65), expand=c(0,0))+
     ggplot2::scale_y_continuous(limits=c(22,51), expand=c(0,0))+

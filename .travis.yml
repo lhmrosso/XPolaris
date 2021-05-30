@@ -4,6 +4,7 @@ language: R
 cache: packages
 before_install:
   - tlmgr install index
+  - tlmgr install inputenc
 apt_packages:
   - libgdal1-dev
   - gdal-bin

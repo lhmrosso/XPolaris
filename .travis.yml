@@ -3,7 +3,7 @@
 language: R
 cache: packages
 before_install:
-  - '\DeclareUnicodeCharacter{FB01}{fi}'
+  - tlmgr install index
 apt_packages:
   - libgdal1-dev
   - gdal-bin

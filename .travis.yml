@@ -2,9 +2,7 @@
 
 language: R
 cache: packages
-before_install:
-  - tlmgr install index
-  - tlmgr install inputenc
+latex: false
 apt_packages:
   - libgdal1-dev
   - gdal-bin

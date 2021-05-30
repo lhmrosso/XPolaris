@@ -2,9 +2,8 @@
 
 language: R
 cache: packages
-before_install: 
-  - R -e 'install.packages("devtools")'
-  - R -e 'devtools::install_deps(dep = T)'
+before_install:
+  sudo apt-get install texinfo
 apt_packages:
   - libgdal1-dev
   - gdal-bin

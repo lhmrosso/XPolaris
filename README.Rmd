@@ -37,7 +37,7 @@ devtools::install_github("lhmrosso/XPolaris")
 ```
 ## Example
 
-After loading the package, users must create a `data.frame` object containing three columns (`ID`, `lat`, and `long`). Locations IDs must be unique alphanumerical identifiers, and latitude and longitude coordinates must be supplied as decimal degrees. The package comes with example locations in the Kansas State, assigned to the `exkansas` object.
+After loading the package, users must create a `data.frame` object containing three columns (`ID`, `lat`, and `long`). Locations IDs must be unique alphanumerical identifiers, and latitude and longitude coordinates must be supplied as decimal degrees. The package comes with example locations in Kansas (`exkansas`).
 
 ```{r example}
 library(XPolaris)
@@ -60,7 +60,7 @@ xplot(locations = exkansas)
 
 # Downloading POLARIS images (POLARISOut folder)
 # Important user inputs (see argument details below)
-# Images are stored in the POLARISOut folder (in sub-folders)
+# Images are stored in the POLARISOut folder (sub-folders)
 # This function does not download the same images twice
 # Main arguments are either data.frame or vectors
 # Vectors should contain character elements
@@ -92,8 +92,8 @@ xsoil(locations = df_ximages)
 | `silt`    | Silt                                                         | %                         | %                         |
 | `bd`      | Bulk density                                                 | g cm$^{-3}$               | g cm$^{-3}$               |
 | `hb`      | Bubbling pressure (Brooks-Corey)                             | log$_{10}$(kPa)           | log$_{10}$(kPa)           |
-| `n`       | Measure of the pore size distribution (van Genuchten)        | -                         | -                         |
-| `alpha`   | Scale parameter inversely proportional to mean pore diameter | log$_{10}$(kPa$^{-1}$)    | log$_{10}$(kPa$^{-1}$)    |
+| `n`       | Measure of pore size distribution (van Genuchten)            | -                         | -                         |
+| `alpha`   | Scale param. inversely prop. to mean pore diameter           | log$_{10}$(kPa$^{-1}$)    | log$_{10}$(kPa$^{-1}$)    |
 | `ksat`    | Saturated hydraulic conductivity                             | log$_{10}$(cm hr$^{-1}$)  | log$_{10}$(cm hr$^{-1}$)  |
 | `lambda`  | Pore size distribution index (Brooks-Corey)                  | -                         | -                         |
 | `theta_r` | Residual soil water content                                  | m$^{3}$ m$^{-3}$          | m$^{3}$ m$^{-3}$          |

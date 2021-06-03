@@ -27,14 +27,8 @@ data into traditional spreadsheet format for further data analysis.
 
 ## Installation
 
-You can install the released version of XPolaris from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("XPolaris")
-```
-
-And the development version from [GitHub](https://github.com/) with:
+You can install the development version from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -64,19 +58,67 @@ The package is composed by three R functions:
 locations will be retrieved;  
 2) `ximages`: downloads the images from the POLARIS database to the
 user’s local machine;  
-3) `xsoil`: extracts the soil data from raster images and creater a
+3) `xsoil`: extracts the soil data from raster images and creates a
 `data.frame` object.
 
 ``` r
-# Generates plot
-xplot(exkansas)
+# Plotting image locations (checking images)
+# The output is a ggplot object but a jpeg is exported
+# Figure is saved in a new folder called (POLARISOut)
+# A data.frame with coordinates is the main argument
+# Locations must have unique ID codes
 
-# Downloading POLARIS images
-df_ximages <- ximages(exkansas)
+xplot(locations = exkansas)
 
-# Retrieving raster soil data
-df_xsoil <- xsoil(df_ximages)
+# Downloading POLARIS images (POLARISOut folder)
+# Important user inputs (see argument details below)
+# Images are stored in the POLARISOut folder (in sub-folders)
+# This function does not download the same images twice
+# Main arguments are either data.frame or vectors
+# Vectors should contain character elements
+
+df_ximages <- ximages(locations = exkansas,
+                      variables = c('clay'),
+                      statistics = c('mean'),
+                      layersdepths = c('0_5'))
+
+# Retrieving raster soil data from images (points)
+# The output is a data.frame but a csv file is exported
+# ximages output is the main argument to extract soil data
+
+xsoil(locations = df_ximages)
 ```
+
+### `ximages` arguments
+
+-   `locations` - Locations `data.frame` (`exkansas`);
+
+-   `variables` - Soil variable codes and units from POLARIS:
+
+|      Code | Description                                                  | Data unit                              | Output unit                            |
+|----------:|:-------------------------------------------------------------|:---------------------------------------|:---------------------------------------|
+|      `ph` | Soil pH in water                                             | \-                                     | \-                                     |
+|      `om` | Soil organic matter                                          | log<sub>10</sub>(%)                    | %                                      |
+|    `clay` | Clay                                                         | %                                      | %                                      |
+|    `sand` | Sand                                                         | %                                      | %                                      |
+|    `silt` | Silt                                                         | %                                      | %                                      |
+|      `bd` | Bulk density                                                 | g cm<sup> − 3</sup>                    | g cm<sup> − 3</sup>                    |
+|      `hb` | Bubbling pressure (Brooks-Corey)                             | log<sub>10</sub>(kPa)                  | log<sub>10</sub>(kPa)                  |
+|       `n` | Measure of the pore size distribution (van Genuchten)        | \-                                     | \-                                     |
+|   `alpha` | Scale parameter inversely proportional to mean pore diameter | log<sub>10</sub>(kPa<sup> − 1</sup>)   | log<sub>10</sub>(kPa<sup> − 1</sup>)   |
+|    `ksat` | Saturated hydraulic conductivity                             | log<sub>10</sub>(cm hr<sup> − 1</sup>) | log<sub>10</sub>(cm hr<sup> − 1</sup>) |
+|  `lambda` | Pore size distribution index (Brooks-Corey)                  | \-                                     | \-                                     |
+| `theta_r` | Residual soil water content                                  | m<sup>3</sup> m<sup> − 3</sup>         | m<sup>3</sup> m<sup> − 3</sup>         |
+| `theta_s` | Saturated soil water content                                 | m<sup>3</sup> m<sup> − 3</sup>         | m<sup>3</sup> m<sup> − 3</sup>         |
+
+-   `statistics` - Summary: `mean`, `mode`, median (`p50`), five (`p5`)
+    and 95 (`p95`) percentiles;
+
+-   `layersdepths` - Depth layers: `0_5`, `5_15`, `15_30`, `30_60`,
+    `60_100`, and `100_200` cm;
+
+-   `localPath` - Path in the user’s machine to store the images. The
+    default is `getwd()`.
 
 ## References
 

@@ -8,8 +8,13 @@
 #' \dontrun{
 #' 
 #' # df_test <- exkansas
-#' # df_ximages <- ximages(df_test)
-#' # df_xsoil <- ximages(df_ximages)
+#' #
+#' # df_ximages <- ximages(locations = df_test,
+#' #                       variables = c('clay'),
+#' #                       statistics = c('mean'),
+#' #                       layersdepths = c('0_5'))
+#' #
+#' # df_xsoil <- ximages(locations = df_ximages)
 #' }
 #' @seealso 
 #'  \code{\link[XPolaris]{xplot}},\code{\link[XPolaris]{ximages}}

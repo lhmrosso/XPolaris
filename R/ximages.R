@@ -6,12 +6,16 @@
 #' @param layersdepths A `vector` with the soil depth codes requested by the user. See the details.
 #' @param localPath Path in the user's machine to store the images. Default: getwd()
 #' @return This function simply downloads the images from the POLARIS database, according to the user request. Images are saved under a new directory, called `POLARISOut`, with the `localPath`.
-#' @details The 13 `variable` code options are: `ph` (soil water pH), `om` (organic matter), `clay`, `sand`, `silt`, `bd` (bulk density), `hb` (bubbling pressure), `n` (pore size distribution), `alpha` (scale parameter inversely proportional to mean pore diameter), `ksat` (saturated hydraulic conductivity), `lambda` (pore size distribution index), `theta_r` (residual soil water content), and `theta_s` (saturated soil water content). There are five options of summary statistics: `mean`, `mode`, median (`p50`), five (`p5`) and 95 (`p95`) percentiles. There are six options of soil depth layers: `0-5`, `5-15`, `15-30`, `30-60`, `60-100`, and `100-200` cm. For more details on variable units please check package documentation.
+#' @details The 13 `variable` code options are: `ph` (soil water pH), `om` (organic matter), `clay`, `sand`, `silt`, `bd` (bulk density), `hb` (bubbling pressure), `n` (pore size distribution), `alpha` (scale parameter inversely proportional to mean pore diameter), `ksat` (saturated hydraulic conductivity), `lambda` (pore size distribution index), `theta_r` (residual soil water content), and `theta_s` (saturated soil water content). There are five options of summary statistics: `mean`, `mode`, median (`p50`), five (`p5`) and 95 (`p95`) percentiles. There are six options of soil depth layers: `0_5`, `5_15`, `15_30`, `30_60`, `60_100`, and `100_200` cm. For more details on variable units please check package documentation.
 #' @examples 
 #' \dontrun{
 #' 
 #' # df_test <- exkansas
-#' # ximages(df_test)
+#' #
+#' # df_ximages <- ximages(locations = df_test,
+#' #                       variables = c('clay'),
+#' #                       statistics = c('mean'),
+#' #                       layersdepths = c('0_5'))
 #' }
 #' @seealso 
 #'  \code{\link[XPolaris]{xplot}},\code{\link[XPolaris]{xsoil}}

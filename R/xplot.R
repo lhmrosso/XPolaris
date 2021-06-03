@@ -8,7 +8,8 @@
 #' \dontrun{
 #' 
 #' # df_test <- exkansas
-#' # xplot(df_test)
+#' #
+#' # xplot(locations = df_test)
 #' }
 #' @seealso 
 #'  \code{\link[XPolaris]{ximages}},\code{\link[XPolaris]{xsoil}}

@@ -24,7 +24,8 @@ This function is useful for checking if locations were correctly informed, but i
 \dontrun{
 
 # df_test <- exkansas
-# xplot(df_test)
+#
+# xplot(locations = df_test)
 }
 }
 \seealso{

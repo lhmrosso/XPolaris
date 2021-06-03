@@ -24,13 +24,17 @@ This function simply downloads the images from the POLARIS database, according t
 Downloading raster images from the POLARIS database.
 }
 \details{
-The 13 \code{variable} code options are: \code{ph} (soil water pH), \code{om} (organic matter), \code{clay}, \code{sand}, \code{silt}, \code{bd} (bulk density), \code{hb} (bubbling pressure), \code{n} (pore size distribution), \code{alpha} (scale parameter inversely proportional to mean pore diameter), \code{ksat} (saturated hydraulic conductivity), \code{lambda} (pore size distribution index), \code{theta_r} (residual soil water content), and \code{theta_s} (saturated soil water content). There are five options of summary statistics: \code{mean}, \code{mode}, median (\code{p50}), five (\code{p5}) and 95 (\code{p95}) percentiles. There are six options of soil depth layers: \code{0-5}, \code{5-15}, \code{15-30}, \code{30-60}, \code{60-100}, and \code{100-200} cm. For more details on variable units please check package documentation.
+The 13 \code{variable} code options are: \code{ph} (soil water pH), \code{om} (organic matter), \code{clay}, \code{sand}, \code{silt}, \code{bd} (bulk density), \code{hb} (bubbling pressure), \code{n} (pore size distribution), \code{alpha} (scale parameter inversely proportional to mean pore diameter), \code{ksat} (saturated hydraulic conductivity), \code{lambda} (pore size distribution index), \code{theta_r} (residual soil water content), and \code{theta_s} (saturated soil water content). There are five options of summary statistics: \code{mean}, \code{mode}, median (\code{p50}), five (\code{p5}) and 95 (\code{p95}) percentiles. There are six options of soil depth layers: \verb{0_5}, \verb{5_15}, \verb{15_30}, \verb{30_60}, \verb{60_100}, and \verb{100_200} cm. For more details on variable units please check package documentation.
 }
 \examples{
 \dontrun{
 
 # df_test <- exkansas
-# ximages(df_test)
+#
+# df_ximages <- ximages(locations = df_test,
+#                       variables = c('clay'),
+#                       statistics = c('mean'),
+#                       layersdepths = c('0_5'))
 }
 }
 \seealso{

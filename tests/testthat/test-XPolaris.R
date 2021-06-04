@@ -1,3 +1,5 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+data('exkansas')
+plt <- xplot(exkansas)
+test_that('no error in generating the plot', {
+  expect_false(inherits(plt, "try-error"))
 })

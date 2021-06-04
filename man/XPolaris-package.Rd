@@ -4,7 +4,7 @@
 \name{XPolaris-package}
 \alias{XPolaris}
 \alias{XPolaris-package}
-\title{XPolaris: Retrieving soil data from POLARIS}
+\title{XPolaris: Retrieving Soil Data from POLARIS}
 \description{
 The POLARIS database is a 30-meter probabilistic soil series map 
   of the contiguous United States (US). It represents an optimization of the Soil 

@@ -1,5 +1,5 @@
 Package: XPolaris
-Title: Retrieving soil data from POLARIS
+Title: Retrieving Soil Data from POLARIS
 Version: 1.0.1
 Authors@R: c(
     person("Luiz", "Moro Rosso", email = "lhmrosso@ksu.edu", role = "cre"),
@@ -25,7 +25,6 @@ Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)
 Imports:
-    covr,
     dplyr,
     forcats,
     ggplot2,
@@ -37,4 +36,3 @@ Imports:
     sf,
     tidyr,
     utils
-VignetteBuilder: knitr

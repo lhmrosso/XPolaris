@@ -11,5 +11,3 @@ apt_packages:
   - proj-bin 
   - libgeos-dev
   - libudunits2-dev
-after_success:
-  - Rscript -e 'covr::codecov()'

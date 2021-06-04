@@ -2,7 +2,6 @@
 
 language: R
 cache: packages
-latex: false
 apt_packages:
   - libgdal1-dev
   - gdal-bin

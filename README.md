@@ -121,24 +121,12 @@ xsoil(locations = df_ximages)
 
 ## References
 
-<div id="refs" class="references csl-bib-body">
+1.  Chaney NW, Wood EF, McBratney AB, Hempel JW, Nauman TW, Brungard CW,
+    et al. POLARIS: A 30-meter probabilistic soil series map of the
+    contiguous united states. Geoderma. 2016;274:54–67.
+    <https://doi.org/10.1016/j.geoderma.2016.03.025>.
 
-<div id="ref-Chan16" class="csl-entry">
-
-1\. Chaney NW, Wood EF, McBratney AB, Hempel JW, Nauman TW, Brungard CW,
-et al. POLARIS: A 30-meter probabilistic soil series map of the
-contiguous united states. Geoderma. 2016;274:54–67.
-doi:<https://doi.org/10.1016/j.geoderma.2016.03.025>.
-
-</div>
-
-<div id="ref-Chan19" class="csl-entry">
-
-2\. Chaney NW, Minasny B, Herman JD, Nauman TW, Brungard CW, Morgan CLS,
-et al. POLARIS soil properties: 30-m probabilistic maps of soil
-properties over the contiguous united states. Water Resources Research.
-2019;55:2916–38. doi:<https://doi.org/10.1029/2018WR022797>.
-
-</div>
-
-</div>
+2.  Chaney NW, Minasny B, Herman JD, Nauman TW, Brungard CW, Morgan CLS,
+    et al. POLARIS soil properties: 30-m probabilistic maps of soil
+    properties over the contiguous united states. Water Resources
+    Research. 2019;55:2916–38. <https://doi.org/10.1029/2018WR022797>.

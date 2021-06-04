@@ -1,7 +1,5 @@
 ---
 output: github_document
-bibliography: citations/citations.bib
-csl: citations/citationstyle.csl
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -25,7 +23,7 @@ knitr::opts_chunk$set(
 
 <img src="man/figures/xpolaris.png" height="300" align="right"/>
 
-The _XPolaris_ package aims to facilitate the access to detailed soil data at any geographical location within the United States (US). The [__POLARIS__](http://hydrology.cee.duke.edu/POLARIS/) database comprises a 30-meter probabilistic soil series map of the contiguous United States (US). It represents an optimization of the Soil Survey Geographic (SSURGO) database, circumventing issues of spatial disaggregation, harmonizing, and filling spatial gaps [@Chan16;@Chan19]. Without the need of advanced skills on R-programming, users will be able to convert raster data into traditional spreadsheet format for further data analysis. 
+The _XPolaris_ package aims to facilitate the access to detailed soil data at any geographical location within the United States (US). The [__POLARIS__](http://hydrology.cee.duke.edu/POLARIS/) database comprises a 30-meter probabilistic soil series map of the contiguous United States (US). It represents an optimization of the Soil Survey Geographic (SSURGO) database, circumventing issues of spatial disaggregation, harmonizing, and filling spatial gaps [1, 2]. Without the need of advanced skills on R-programming, users will be able to convert raster data into traditional spreadsheet format for further data analysis. 
 
 ## Installation
 
@@ -35,6 +33,7 @@ You can install the development version from [GitHub](https://github.com/) with:
 # install.packages("devtools")
 devtools::install_github("lhmrosso/XPolaris")
 ```
+
 ## Example
 
 After loading the package, users must create a `data.frame` object containing three columns (`ID`, `lat`, and `long`). Locations IDs must be unique alphanumerical identifiers, and latitude and longitude coordinates must be supplied as decimal degrees. The package comes with example locations in Kansas (`exkansas`).
@@ -99,7 +98,6 @@ xsoil(locations = df_ximages)
 | `theta_r` | Residual soil water content                                  | m$^{3}$ m$^{-3}$          | m$^{3}$ m$^{-3}$          |
 | `theta_s` | Saturated soil water content                                 | m$^{3}$ m$^{-3}$          | m$^{3}$ m$^{-3}$          |
 
-
 - `statistics` - Summary: `mean`, `mode`, median (`p50`), five (`p5`) and 95 (`p95`) percentiles;  
 
 - `layersdepths` - Depth layers: `0_5`, `5_15`, `15_30`, `30_60`, `60_100`, and `100_200` cm;  
@@ -107,3 +105,7 @@ xsoil(locations = df_ximages)
 - `localPath` - Path in the user's machine to store the images. The default is `getwd()`.
 
 ## References
+
+1. Chaney NW, Wood EF, McBratney AB, Hempel JW, Nauman TW, Brungard CW, et al. POLARIS: A 30-meter probabilistic soil series map of the contiguous united states. Geoderma. 2016;274:54–67. https://doi.org/10.1016/j.geoderma.2016.03.025.
+
+2. Chaney NW, Minasny B, Herman JD, Nauman TW, Brungard CW, Morgan CLS, et al. POLARIS soil properties: 30-m probabilistic maps of soil properties over the contiguous united states. Water Resources Research. 2019;55:2916–38. https://doi.org/10.1029/2018WR022797.

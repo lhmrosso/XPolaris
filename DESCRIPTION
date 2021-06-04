@@ -32,6 +32,7 @@ Imports:
     mapproj,
     purrr,
     raster,
+    rgdal,
     sf,
     tidyr,
     utils

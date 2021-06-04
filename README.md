@@ -79,9 +79,9 @@ xplot(locations = exkansas)
 # Vectors should contain character elements
 
 df_ximages <- ximages(locations = exkansas,
-                      variables = c('clay'),
                       statistics = c('mean'),
-                      layersdepths = c('0_5'))
+                      variables = c('ph','om','clay'),
+                      layersdepths = c('0_5','5_15','15_30'))
 
 # Retrieving raster soil data from images (points)
 # The output is a data.frame but a csv file is exported

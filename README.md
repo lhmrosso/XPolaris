@@ -94,21 +94,21 @@ xsoil(locations = df_ximages)
 
 -   `variables` - Soil variable codes and units from POLARIS:
 
-|      Code | Description                                        | Data unit                              | Output unit                            |
-|----------:|:---------------------------------------------------|:---------------------------------------|:---------------------------------------|
-|      `ph` | Soil pH in water                                   | \-                                     | \-                                     |
-|      `om` | Soil organic matter                                | log<sub>10</sub>(%)                    | %                                      |
-|    `clay` | Clay                                               | %                                      | %                                      |
-|    `sand` | Sand                                               | %                                      | %                                      |
-|    `silt` | Silt                                               | %                                      | %                                      |
-|      `bd` | Bulk density                                       | g cm<sup> − 3</sup>                    | g cm<sup> − 3</sup>                    |
-|      `hb` | Bubbling pressure (Brooks-Corey)                   | log<sub>10</sub>(kPa)                  | log<sub>10</sub>(kPa)                  |
-|       `n` | Measure of pore size distribution (van Genuchten)  | \-                                     | \-                                     |
-|   `alpha` | Scale param. inversely prop. to mean pore diameter | log<sub>10</sub>(kPa<sup> − 1</sup>)   | log<sub>10</sub>(kPa<sup> − 1</sup>)   |
-|    `ksat` | Saturated hydraulic conductivity                   | log<sub>10</sub>(cm hr<sup> − 1</sup>) | log<sub>10</sub>(cm hr<sup> − 1</sup>) |
-|  `lambda` | Pore size distribution index (Brooks-Corey)        | \-                                     | \-                                     |
-| `theta_r` | Residual soil water content                        | m<sup>3</sup> m<sup> − 3</sup>         | m<sup>3</sup> m<sup> − 3</sup>         |
-| `theta_s` | Saturated soil water content                       | m<sup>3</sup> m<sup> − 3</sup>         | m<sup>3</sup> m<sup> − 3</sup>         |
+|      Code | Description                                        | Data unit                              | Output unit                    |
+|----------:|:---------------------------------------------------|:---------------------------------------|:-------------------------------|
+|      `ph` | Soil pH in water                                   | \-                                     | \-                             |
+|      `om` | Soil organic matter                                | log<sub>10</sub>(%)                    | %                              |
+|    `clay` | Clay                                               | %                                      | %                              |
+|    `sand` | Sand                                               | %                                      | %                              |
+|    `silt` | Silt                                               | %                                      | %                              |
+|      `bd` | Bulk density                                       | g cm<sup> − 3</sup>                    | g cm<sup> − 3</sup>            |
+|      `hb` | Bubbling pressure (Brooks-Corey)                   | log<sub>10</sub>(kPa)                  | kPa                            |
+|       `n` | Measure of pore size distribution (van Genuchten)  | \-                                     | \-                             |
+|   `alpha` | Scale param. inversely prop. to mean pore diameter | log<sub>10</sub>(kPa<sup> − 1</sup>)   | kPa<sup> − 1</sup>             |
+|    `ksat` | Saturated hydraulic conductivity                   | log<sub>10</sub>(cm hr<sup> − 1</sup>) | cm hr<sup> − 1</sup>           |
+|  `lambda` | Pore size distribution index (Brooks-Corey)        | \-                                     | \-                             |
+| `theta_r` | Residual soil water content                        | m<sup>3</sup> m<sup> − 3</sup>         | m<sup>3</sup> m<sup> − 3</sup> |
+| `theta_s` | Saturated soil water content                       | m<sup>3</sup> m<sup> − 3</sup>         | m<sup>3</sup> m<sup> − 3</sup> |
 
 -   `statistics` - Summary: `mean`, `mode`, median (`p50`), five (`p5`)
     and 95 (`p95`) percentiles;

@@ -91,10 +91,10 @@ xsoil(locations = df_ximages)
 | `sand`    | Sand                                                         | %                         | %                         |
 | `silt`    | Silt                                                         | %                         | %                         |
 | `bd`      | Bulk density                                                 | g cm$^{-3}$               | g cm$^{-3}$               |
-| `hb`      | Bubbling pressure (Brooks-Corey)                             | log$_{10}$(kPa)           | log$_{10}$(kPa)           |
+| `hb`      | Bubbling pressure (Brooks-Corey)                             | log$_{10}$(kPa)           | kPa                       |
 | `n`       | Measure of pore size distribution (van Genuchten)            | -                         | -                         |
-| `alpha`   | Scale param. inversely prop. to mean pore diameter           | log$_{10}$(kPa$^{-1}$)    | log$_{10}$(kPa$^{-1}$)    |
-| `ksat`    | Saturated hydraulic conductivity                             | log$_{10}$(cm hr$^{-1}$)  | log$_{10}$(cm hr$^{-1}$)  |
+| `alpha`   | Scale param. inversely prop. to mean pore diameter           | log$_{10}$(kPa$^{-1}$)    | kPa$^{-1}$                |
+| `ksat`    | Saturated hydraulic conductivity                             | log$_{10}$(cm hr$^{-1}$)  | cm hr$^{-1}$              |
 | `lambda`  | Pore size distribution index (Brooks-Corey)                  | -                         | -                         |
 | `theta_r` | Residual soil water content                                  | m$^{3}$ m$^{-3}$          | m$^{3}$ m$^{-3}$          |
 | `theta_s` | Saturated soil water content                                 | m$^{3}$ m$^{-3}$          | m$^{3}$ m$^{-3}$          |

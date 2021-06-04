@@ -56,9 +56,9 @@ xsoil <- function(ximages_output,
     
     dplyr::mutate(Values = dplyr::case_when(
       variables == 'om' ~ 10^Values,
-      #variables == 'alpha' ~ (10^Values)/10.2,
-      #variables == 'ksat' ~ (10^Values)*24,
-      #variables == 'hb' ~ 10^Values,
+      variables == 'hb' ~ 10^Values,
+      variables == 'alpha' ~ 10^Values,
+      variables == 'ksat' ~ 10^Values,
       TRUE ~ Values)) %>%
 
     # Re-arrange table for final output

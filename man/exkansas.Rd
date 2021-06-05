@@ -16,10 +16,6 @@ This data frame has 3 rows and the following 3 columns:
 exkansas
 }
 \description{
-This locations example was created to help users
-setup their own location data. The locations “Scandia” and
-“Belleville” are close in space, to ilustrate that the code
-only downloads a minimum number of images to extract the soil
-information (proximal locations may fall in the same raster ﬁle).
+This locations example was created to help users setup their own location data. The locations Scandia and Belleville are close in space, to ilustrate that the code only downloads a minimum number of images to extract the soil information (proximal locations may fall in the same raster).
 }
 \keyword{datasets}

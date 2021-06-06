@@ -6,11 +6,19 @@
 \alias{XPolaris-package}
 \title{XPolaris: Retrieving Soil Data from POLARIS}
 \description{
-The POLARIS database is a 30-meter probabilistic soil series map 
-  of the contiguous United States (US). It represents an optimization of the Soil 
-  Survey Geographic (SSURGO) database, circumventing issues of spatial disaggregation, 
-  harmonizing, and filling spatial gaps. This R package facilitate the access to large 
-  amounts of soil data within the US, currently stored as raster images.
+The POLARIS database is a 30-meter probabilistic soil series 
+    map of the contiguous United States (US). It represents an optimization 
+    of the Soil Survey Geographic database. This R package facilitate the 
+    access to large amounts of soil data within the US, currently 
+    stored as raster images.
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/lhmrosso/XPolaris}
+  \item Report bugs at \url{https://github.com/lhmrosso/XPolaris/issues}
+}
+
 }
 \author{
 \strong{Maintainer}: Luiz Moro Rosso \email{lhmrosso@ksu.edu}

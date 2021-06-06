@@ -9,16 +9,22 @@ xplot(locations, localPath = getwd())
 \arguments{
 \item{locations}{A \code{data.frame} object with location information.}
 
-\item{localPath}{Path in the user's machine to store the images. Default: getwd()}
+\item{localPath}{Path to store the images. Default: getwd()}
 }
 \value{
-It returns a \code{ggplot} object and exports a \code{.jpeg} image with the locations map. Images will be saved under a new directory, called \code{POLARISOut}. The directory will be created within \code{localPath} and used to store the raster images from the POLARIS database.
+It returns a \code{ggplot} object and exports a \code{.jpeg} image with
+the locations map. Images will be saved under a new directory, called
+\code{POLARISOut}. The directory will be created within \code{localPath}
+and used to store the raster images from the POLARIS database.
 }
 \description{
-Identifies the images from which locations must be accessed.
+Identifies images containing the locations.
 }
 \details{
-This function is useful for checking if locations were correctly informed, but its output is not required by \code{ximages} or \code{xsoil}. If a given location falls in the border of an image (round coordinates), the function will make sure a minimum number of images is downloaded.
+This function is useful for checking if locations were correctly
+informed, but its output is not required by \code{ximages} or \code{xsoil}. If a
+given location falls in the border of an image (round coordinates),
+the function will make sure a minimum number of images is downloaded.
 }
 \examples{
 \dontrun{

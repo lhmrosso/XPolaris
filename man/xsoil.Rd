@@ -7,18 +7,21 @@
 xsoil(ximages_output, localPath = getwd())
 }
 \arguments{
-\item{ximages_output}{The \code{data.frame} output from \code{ximages} function.}
+\item{ximages_output}{A \code{data.frame} output from \code{ximages} function.}
 
-\item{localPath}{Path in the user's machine to store the images. Default: getwd()}
+\item{localPath}{Path to store the images. Default: getwd()}
 }
 \value{
-It returns a \code{data.frame} object and exports a \code{.csv} file with the soil data. The \code{.csv} file will be save under the \code{POLARISOut} directory.
+It returns a \code{data.frame} object and exports a \code{.csv}
+file with the soil data. The \code{.csv} file will be save under
+a new directory (\code{POLARISOut}) in the user's machine.
 }
 \description{
 Extracting soil data from downloaded raster images.
 }
 \details{
-This function must be executed after downloading the images (excuting the \code{ximages} function).
+This function must be executed after downloading the images,
+because it depends on the output from the \code{ximages} function.
 }
 \examples{
 \dontrun{

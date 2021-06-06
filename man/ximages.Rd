@@ -9,22 +9,35 @@ ximages(locations, variables, statistics, layersdepths, localPath = getwd())
 \arguments{
 \item{locations}{A \code{data.frame} object with location information.}
 
-\item{variables}{A \code{vector} with soil variable codes. See the details section.}
+\item{variables}{A \code{vector} with soil variable codes. There are 13
+variables in the POLARIS database: \code{ph} (soil water pH), \code{om} (organic
+matter), \code{clay}, \code{sand}, \code{silt}, \code{bd} (bulk density), \code{hb} (bubbling
+pressure), \code{n} (pore size distribution), \code{alpha} (scale parameter
+inversely proportional to mean pore diameter), \code{ksat} (saturated
+hydraulic conductivity), \code{lambda} (pore size distribution index),
+\code{theta_r} (residual soil water content), and \code{theta_s} (saturated
+soil water content).}
 
-\item{statistics}{A \code{vector} with the distribution summary options. See the details section.}
+\item{statistics}{A \code{vector} with the distribution summary options.
+There are five options of summary statistics: \code{mean}, \code{mode}, median
+(\code{p50}), five (\code{p5}) and 95 (\code{p95}) percentiles.}
 
-\item{layersdepths}{A \code{vector} with the soil depth codes requested by the user. See the details.}
+\item{layersdepths}{A \code{vector} with the soil depth codes. There are six
+options of soil depth layers: \verb{0_5}, \verb{5_15}, \verb{15_30}, \verb{30_60}, \verb{60_100},
+and \verb{100_200} cm.}
 
-\item{localPath}{Path in the user's machine to store the images. Default: getwd()}
+\item{localPath}{Path to store the images. Default: getwd()}
 }
 \value{
-This function simply downloads the images from the POLARIS database, according to the user request. Images are saved under a new directory, called \code{POLARISOut}, with the \code{localPath}.
+This function simply downloads the images from the POLARIS
+database, according to the user request. Images are saved under a
+new directory, called \code{POLARISOut}, with the \code{localPath}.
 }
 \description{
 Downloading raster images from the POLARIS database.
 }
 \details{
-The 13 \code{variable} code options are: \code{ph} (soil water pH), \code{om} (organic matter), \code{clay}, \code{sand}, \code{silt}, \code{bd} (bulk density), \code{hb} (bubbling pressure), \code{n} (pore size distribution), \code{alpha} (scale parameter inversely proportional to mean pore diameter), \code{ksat} (saturated hydraulic conductivity), \code{lambda} (pore size distribution index), \code{theta_r} (residual soil water content), and \code{theta_s} (saturated soil water content). There are five options of summary statistics: \code{mean}, \code{mode}, median (\code{p50}), five (\code{p5}) and 95 (\code{p95}) percentiles. There are six options of soil depth layers: \verb{0_5}, \verb{5_15}, \verb{15_30}, \verb{30_60}, \verb{60_100}, and \verb{100_200} cm. For more details on variable units please check package documentation.
+For details on units check package documentation.
 }
 \examples{
 \dontrun{

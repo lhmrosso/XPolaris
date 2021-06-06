@@ -18,7 +18,7 @@ exkansas
 \description{
 This locations example was created to help users setup their
 own location data. The locations Scandia and Belleville are close in space,
-to ilustrate that only a minimum number of images will be downloaded to get
-the soil information (proximal locations may fall in the same raster).
+to illustrate that only a minimum number of images will be downloaded to
+get the soil information (proximal locations may fall in the same raster).
 }
 \keyword{datasets}

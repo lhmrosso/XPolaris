@@ -92,10 +92,9 @@ xsoil <- function(ximages_output,
   
   write.csv(temp1, 
             
-            paste0(localPath,'/',
-                   'POLARISOut','/',
-                   
-                   'xsoil_data','.csv'),
+            file.path(localPath,
+                      'POLARISOut',
+                      'xsoil_data.csv'),
             
             row.names = FALSE, 
             na = '')

@@ -1,3 +1,8 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Reduced the size of tarball, by removing test output.
+  
 ## Test environments
 - R-hub windows-x86_64-release (r-release)
 - R-hub ubuntu-gcc-release (r-release)
@@ -14,8 +19,6 @@
   Maintainer: 'Luiz Moro Rosso <lhmrosso@ksu.edu>'
   
   New submission
-  
-  Size of tarball: 56431268 bytes
 
 0 errors ✓ | 0 warnings ✓ | 1 note x
 

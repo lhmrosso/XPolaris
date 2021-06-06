@@ -23,6 +23,7 @@ Suggests:
     knitr,
     mapproj,
     maps,
+    methods,
     rgdal,
     rmarkdown,
     testthat (>= 3.0.0)

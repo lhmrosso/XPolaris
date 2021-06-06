@@ -202,15 +202,14 @@ xplot <- function(locations,
   
   ## CREATING LOCAL FOLDER TO SAVE THE PLOT
   
-  dir.create(paste0(localPath,'/','POLARISOut'), 
+  dir.create(file.path(localPath,'POLARISOut'), 
              showWarnings = FALSE)
   
   # Exporting the plot
   
-  ggplot2::ggsave(paste0(localPath,'/',
-                         'POLARISOut','/',
-                         
-                         'ximages','.jpg'),
+  ggplot2::ggsave(file.path(localPath,
+                            'POLARISOut',
+                            'ximages.jpg'),
                   
                   plot = temp2, 
                   width = 6.5, 

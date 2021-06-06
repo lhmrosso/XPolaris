@@ -4,7 +4,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^data-raw$
-^citations$
 ^appveyor\.yml$
 ^codecov\.yml$
 ^cran-comments\.md$
+^CRAN-RELEASE$

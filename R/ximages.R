@@ -148,14 +148,15 @@ ximages <- function(locations,
 
     # Convenient way to store the images
     
-    dplyr::mutate(local_file = paste0(localPath, '/',
-                                      'POLARISOut', '/',
-                                      statistics, '/',
-                                      variables, '/',
-                                      layersdepths, '/',
-                                      
-                                      lat_range, '_',
-                                      long_range,'.tif')) %>%
+    dplyr::mutate(local_file = 
+                    file.path(localPath,
+                              'POLARISOut',
+                              statistics,
+                              variables,
+                              layersdepths, 
+                              
+                              paste0(lat_range, '_',
+                                     long_range,'.tif'))) %>%
 
     # temp2 will be used twice
     
@@ -181,12 +182,11 @@ ximages <- function(locations,
     
     # Sub-folders to save the images from POLARIS
     
-    dplyr::mutate(local_folder = paste0(localPath,
-                                        'POLARISOut',
-                                        statistics,
-                                        variables,
-                                        layersdepths, 
-                                        sep = '/')) %>%
+    dplyr::mutate(local_folder = file.path(localPath,
+                                           'POLARISOut',
+                                           statistics,
+                                           variables,
+                                           layersdepths)) %>%
 
     dplyr::mutate(create = local_folder %>% 
                     purrr::map(~dir.create(., 
@@ -212,13 +212,14 @@ ximages <- function(locations,
     
     # Online database with images organized is sub-directories
     
-    dplyr::mutate(online_file = paste0(POLARISWeb,
-                                       variables, '/',
-                                       statistics, '/',
-                                       layersdepths, '/',
-                                       
-                                       lat_range, '_',
-                                       long_range, '.tif')) %>%
+    dplyr::mutate(online_file = 
+                    paste0(POLARISWeb,
+                           variables, '/',
+                           statistics, '/',
+                           layersdepths, '/',
+                           
+                           lat_range, '_',
+                           long_range, '.tif')) %>%
 
     # If the files have already been downloaded they will not be again
     
@@ -240,7 +241,8 @@ ximages <- function(locations,
                     purrr::map2(.x = online_file, 
                                 .y = local_file,
                                 .f = ~download.file(url = .x, 
-                                                    destfile = .y)))
+                                                    destfile = .y,
+                                                    mode = 'wb')))
   
   ## FUNCTION OUTPUT
   

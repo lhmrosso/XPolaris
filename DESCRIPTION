@@ -6,11 +6,11 @@ Authors@R: c(
     person("Andre", "Borja Reis", email = "andrefbr@ksu.edu", role = "aut"),
     person("Adrian", "Correndo", email = "correndo@ksu.edu", role = "aut"),
     person("Ignacio", "Ciampitti", email = "ciampitti@ksu.edu", role = "aut"))
-Description: The POLARIS database is a 30-meter probabilistic soil series 
-    map of the contiguous United States (US). It represents an optimization 
-    of the Soil Survey Geographic database. This R package facilitate the 
-    access to large amounts of soil data within the US, currently 
-    stored as raster images.
+Description: The POLARIS database <http://hydrology.cee.duke.edu/POLARIS/> is 
+    a 30-meter probabilistic soil series map of the contiguous United States 
+    (US). It represents an optimization of the Soil Survey Geographic 
+    database. This R package facilitate the access to large amounts 
+    of soil data within the US, currently stored as raster images.
 License: MIT + file LICENSE
 URL: https://github.com/lhmrosso/XPolaris
 BugReports: https://github.com/lhmrosso/XPolaris/issues

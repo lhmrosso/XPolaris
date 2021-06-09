@@ -25,15 +25,12 @@ because it depends on the output from the \code{ximages} function.
 }
 \examples{
 \dontrun{
-
-# df_test <- exkansas
-#
-# df_ximages <- ximages(locations = df_test,
-#                       variables = c('clay'),
-#                       statistics = c('mean'),
-#                       layersdepths = c('0_5'))
-#
-# df_xsoil <- ximages(locations = df_ximages)
+df_test <- exkansas
+df_ximages <- ximages(locations = df_test,
+                      variables = c('clay'),
+                      statistics = c('mean'),
+                      layersdepths = c('0_5'))
+df_xsoil <- xsoil(ximages_output = df_ximages)
 }
 }
 \seealso{

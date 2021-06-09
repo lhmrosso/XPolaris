@@ -19,16 +19,14 @@
 #' @return This function simply downloads the images from the POLARIS 
 #' database, according to the user request. Images are saved under a 
 #' new directory, called `POLARISOut`, with the `localPath`.
-#' @details For details on units check package documentation.
+#' @details For details on units check the `README` file.
 #' @examples 
 #' \dontrun{
-#' 
-#' # df_test <- exkansas
-#' #
-#' # df_ximages <- ximages(locations = df_test,
-#' #                       variables = c('clay'),
-#' #                       statistics = c('mean'),
-#' #                       layersdepths = c('0_5'))
+#' df_test <- exkansas
+#' df_ximages <- ximages(locations = df_test,
+#'                        variables = c('clay'),
+#'                        statistics = c('mean'),
+#'                        layersdepths = c('0_5'))
 #' }
 #' @seealso 
 #'  \code{\link[XPolaris]{xplot}},\code{\link[XPolaris]{xsoil}}

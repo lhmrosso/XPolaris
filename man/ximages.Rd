@@ -37,17 +37,15 @@ new directory, called \code{POLARISOut}, with the \code{localPath}.
 Downloading raster images from the POLARIS database.
 }
 \details{
-For details on units check package documentation.
+For details on units check the \code{README} file.
 }
 \examples{
 \dontrun{
-
-# df_test <- exkansas
-#
-# df_ximages <- ximages(locations = df_test,
-#                       variables = c('clay'),
-#                       statistics = c('mean'),
-#                       layersdepths = c('0_5'))
+df_test <- exkansas
+df_ximages <- ximages(locations = df_test,
+                       variables = c('clay'),
+                       statistics = c('mean'),
+                       layersdepths = c('0_5'))
 }
 }
 \seealso{

@@ -6,11 +6,11 @@
 \alias{XPolaris-package}
 \title{XPolaris: Retrieving Soil Data from POLARIS}
 \description{
-The POLARIS database is a 30-meter probabilistic soil series 
-    map of the contiguous United States (US). It represents an optimization 
-    of the Soil Survey Geographic database. This R package facilitate the 
-    access to large amounts of soil data within the US, currently 
-    stored as raster images.
+The POLARIS database <http://hydrology.cee.duke.edu/POLARIS/> is 
+    a 30-meter probabilistic soil series map of the contiguous United States 
+    (US). It represents an optimization of the Soil Survey Geographic 
+    database. This R package facilitate the access to large amounts 
+    of soil data within the US, currently stored as raster images.
 }
 \seealso{
 Useful links:

@@ -12,10 +12,8 @@
 #' the function will make sure a minimum number of images is downloaded.
 #' @examples 
 #' \dontrun{
-#' 
-#' # df_test <- exkansas
-#' #
-#' # xplot(locations = df_test)
+#' df_test <- exkansas
+#' xplot(locations = df_test)
 #' }
 #' @seealso 
 #'  \code{\link[XPolaris]{ximages}},\code{\link[XPolaris]{xsoil}}

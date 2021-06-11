@@ -85,7 +85,7 @@ df_ximages <- ximages(locations = exkansas,
 # The output is a data.frame but a csv file is exported
 # ximages output is the main argument to extract soil data
 
-xsoil(locations = df_ximages)
+xsoil(ximages_output = df_ximages)
 ```
 
 ### `ximages` arguments

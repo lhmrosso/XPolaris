@@ -24,9 +24,9 @@
 #' \dontrun{
 #' df_test <- exkansas
 #' df_ximages <- ximages(locations = df_test,
-#'                        variables = c('clay'),
-#'                        statistics = c('mean'),
-#'                        layersdepths = c('0_5'))
+#'                       variables = c('clay'),
+#'                       statistics = c('mean'),
+#'                       layersdepths = c('0_5'))
 #' }
 #' @seealso 
 #'  \code{\link[XPolaris]{xplot}},\code{\link[XPolaris]{xsoil}}

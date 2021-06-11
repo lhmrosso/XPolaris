@@ -38,8 +38,8 @@ devtools::install_github("lhmrosso/XPolaris")
 ## Example
 
 After loading the package, users must create a `data.frame` object
-containing three columns (`ID`, `lat`, and `long`). Locations IDs must
-be unique alphanumerical identifiers, and latitude and longitude
+containing three columns (`ID`, `lat`, and `long`). Location IDs must be
+unique alphanumerical identifiers, and latitude and longitude
 coordinates must be supplied as decimal degrees. The package comes with
 example locations in Kansas (`exkansas`).
 

@@ -5,7 +5,7 @@
 \alias{exkansas}
 \title{Example locations in Kansas}
 \format{
-This data frame has 3 rows and the following 3 columns:
+This \code{data.frame} has 3 rows and the following 3 columns:
 \describe{
 \item{ID}{Unique identifier of a given location.}
 \item{lat}{Latitude coordinate, in decimal degrees.}

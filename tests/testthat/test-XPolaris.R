@@ -20,5 +20,3 @@ test_that('no error downloading images', {
 test_that('no error extracting soil', {
   expect_false(inherits(soi, "try-error"))
 })
-
-unlink('POLARISOut', recursive = TRUE)

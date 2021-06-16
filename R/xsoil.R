@@ -1,7 +1,7 @@
 #' @title xsoil
-#' @description Extracting soil data from downloaded raster images.
+#' @description Extracting soil data from downloaded images.
 #' @param ximages_output A `data.frame` output from `ximages` function.
-#' @param localPath Path to store the images. Default: getwd()
+#' @param localPath Path to store the images. Default: `tempdir()`
 #' @return It returns a `data.frame` object and exports a `.csv` 
 #' file with the soil data. The `.csv` file will be save under 
 #' a new directory (`POLARISOut`) in the user's machine.
@@ -29,7 +29,7 @@
 #' @importFrom dplyr mutate select ungroup case_when
 
 xsoil <- function(ximages_output,
-                  localPath = getwd()){
+                  localPath = tempdir()){
   
   # Binding variables to the function
   

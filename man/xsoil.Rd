@@ -4,12 +4,12 @@
 \alias{xsoil}
 \title{xsoil}
 \usage{
-xsoil(ximages_output, localPath = getwd())
+xsoil(ximages_output, localPath = tempdir())
 }
 \arguments{
 \item{ximages_output}{A \code{data.frame} output from \code{ximages} function.}
 
-\item{localPath}{Path to store the images. Default: getwd()}
+\item{localPath}{Path to store the images. Default: \code{tempdir()}}
 }
 \value{
 It returns a \code{data.frame} object and exports a \code{.csv}
@@ -17,7 +17,7 @@ file with the soil data. The \code{.csv} file will be save under
 a new directory (\code{POLARISOut}) in the user's machine.
 }
 \description{
-Extracting soil data from downloaded raster images.
+Extracting soil data from downloaded images.
 }
 \details{
 This function must be executed after downloading the images,

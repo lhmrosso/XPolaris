@@ -4,17 +4,17 @@
 \alias{xplot}
 \title{xplot}
 \usage{
-xplot(locations, localPath = getwd())
+xplot(locations, localPath = tempdir())
 }
 \arguments{
-\item{locations}{A \code{data.frame} object with location information.}
+\item{locations}{A \code{data.frame} object with locations data.}
 
-\item{localPath}{Path to store the images. Default: getwd()}
+\item{localPath}{Path to store the images. Default: \code{tempdir()}}
 }
 \value{
 It returns a \code{ggplot} object and exports a \code{.jpeg} image with
 the locations map. Images will be saved under a new directory, called
-\code{POLARISOut}. The directory will be created within \code{localPath}
+\code{POLARISOut}. The directory will be created within the \code{localPath}
 and used to store the raster images from the POLARIS database.
 }
 \description{

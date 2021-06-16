@@ -4,10 +4,10 @@
 \alias{ximages}
 \title{ximages}
 \usage{
-ximages(locations, variables, statistics, layersdepths, localPath = getwd())
+ximages(locations, variables, statistics, layersdepths, localPath = tempdir())
 }
 \arguments{
-\item{locations}{A \code{data.frame} object with location information.}
+\item{locations}{A \code{data.frame} object with locations data.}
 
 \item{variables}{A \code{vector} with soil variable codes. There are 13
 variables in the POLARIS database: \code{ph} (soil water pH), \code{om} (organic
@@ -26,26 +26,26 @@ There are five options of summary statistics: \code{mean}, \code{mode}, median
 options of soil depth layers: \verb{0_5}, \verb{5_15}, \verb{15_30}, \verb{30_60}, \verb{60_100},
 and \verb{100_200} cm.}
 
-\item{localPath}{Path to store the images. Default: getwd()}
+\item{localPath}{Path to store the images. Default: \code{tempdir()}}
 }
 \value{
 This function simply downloads the images from the POLARIS
 database, according to the user request. Images are saved under a
-new directory, called \code{POLARISOut}, with the \code{localPath}.
+new directory, called \code{POLARISOut}, within the \code{localPath}.
 }
 \description{
-Downloading raster images from the POLARIS database.
+Downloading images from the POLARIS database.
 }
 \details{
-For details on units check the \code{README} file.
+For details on units check package repository.
 }
 \examples{
 \dontrun{
 df_test <- exkansas
 df_ximages <- ximages(locations = df_test,
-                       variables = c('clay'),
-                       statistics = c('mean'),
-                       layersdepths = c('0_5'))
+                      variables = c('clay'),
+                      statistics = c('mean'),
+                      layersdepths = c('0_5'))
 }
 }
 \seealso{

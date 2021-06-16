@@ -1,6 +1,6 @@
 #' @title ximages
-#' @description Downloading raster images from the POLARIS database.
-#' @param locations A `data.frame` object with location information.
+#' @description Downloading images from the POLARIS database.
+#' @param locations A `data.frame` object with locations data.
 #' @param variables A `vector` with soil variable codes. There are 13 
 #' variables in the POLARIS database: `ph` (soil water pH), `om` (organic 
 #' matter), `clay`, `sand`, `silt`, `bd` (bulk density), `hb` (bubbling 
@@ -15,11 +15,11 @@
 #' @param layersdepths A `vector` with the soil depth codes. There are six 
 #' options of soil depth layers: `0_5`, `5_15`, `15_30`, `30_60`, `60_100`, 
 #' and `100_200` cm.
-#' @param localPath Path to store the images. Default: getwd()
+#' @param localPath Path to store the images. Default: `tempdir()`
 #' @return This function simply downloads the images from the POLARIS 
 #' database, according to the user request. Images are saved under a 
-#' new directory, called `POLARISOut`, with the `localPath`.
-#' @details For details on units check the `README` file.
+#' new directory, called `POLARISOut`, within the `localPath`.
+#' @details For details on units check package repository.
 #' @examples 
 #' \dontrun{
 #' df_test <- exkansas
@@ -42,7 +42,7 @@ ximages <- function(locations,
                     variables,
                     statistics,
                     layersdepths,
-                    localPath = getwd()){
+                    localPath = tempdir()){
   
   # Binding variables to the function
   

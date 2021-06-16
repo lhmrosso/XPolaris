@@ -1,10 +1,10 @@
 #' @title xplot
 #' @description Identifies images containing the locations.
-#' @param locations A `data.frame` object with location information.
-#' @param localPath Path to store the images. Default: getwd()
+#' @param locations A `data.frame` object with locations data.
+#' @param localPath Path to store the images. Default: `tempdir()`
 #' @return It returns a `ggplot` object and exports a `.jpeg` image with 
 #' the locations map. Images will be saved under a new directory, called 
-#' `POLARISOut`. The directory will be created within `localPath` 
+#' `POLARISOut`. The directory will be created within the `localPath` 
 #' and used to store the raster images from the POLARIS database.
 #' @details This function is useful for checking if locations were correctly 
 #' informed, but its output is not required by `ximages` or `xsoil`. If a 
@@ -30,7 +30,7 @@
 #' element_blank ggsave
 
 xplot <- function(locations,
-                  localPath = getwd()){
+                  localPath = tempdir()){
   
   # Binding variables to the function
   

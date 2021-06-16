@@ -23,7 +23,7 @@ knitr::opts_chunk$set(
 
 <img src="man/figures/xpolaris.png" height="300" align="right"/>
 
-The _XPolaris_ package aims to facilitate the access to detailed soil data at any geographical location within the United States (US). The [__POLARIS__](http://hydrology.cee.duke.edu/POLARIS/) database comprises a 30-meter probabilistic soil series map of the contiguous United States (US). It represents an optimization of the Soil Survey Geographic (SSURGO) database, circumventing issues of spatial disaggregation, harmonizing, and filling spatial gaps [1, 2]. Without the need of advanced skills on R-programming, users will be able to convert raster data into traditional spreadsheet format for further data analysis. 
+The _XPolaris_ package aims to facilitate the access to detailed soil data at any geographical location within the United States (US). The [__POLARIS__](http://hydrology.cee.duke.edu/POLARIS/) database comprises a 30-meter probabilistic soil series map of the contiguous United States (US). It represents an optimization of the Soil Survey Geographic (SSURGO) database, circumventing issues of spatial disaggregation, harmonizing, and filling spatial gaps [1, 2]. Without the need of advanced skills on R-programming, users will be able to convert raster data into traditional spreadsheet format for further data analyses. 
 
 ## Installation
 
@@ -102,7 +102,7 @@ xsoil(ximages_output = df_ximages)
 
 - `layersdepths` - Depth layers: `0_5`, `5_15`, `15_30`, `30_60`, `60_100`, and `100_200` cm;  
 
-- `localPath` - Path in the user's machine to store the images. The default is `getwd()`.
+- `localPath` - Path in the user's machine to store the images. The default is `tempdir()`.
 
 ## References
 

@@ -23,7 +23,7 @@ a 30-meter probabilistic soil series map of the contiguous United States
 (SSURGO) database, circumventing issues of spatial disaggregation,
 harmonizing, and filling spatial gaps \[1, 2\]. Without the need of
 advanced skills on R-programming, users will be able to convert raster
-data into traditional spreadsheet format for further data analysis.
+data into traditional spreadsheet format for further data analyses.
 
 ## Installation
 
@@ -117,7 +117,7 @@ xsoil(ximages_output = df_ximages)
     `60_100`, and `100_200` cm;
 
 -   `localPath` - Path in the user’s machine to store the images. The
-    default is `getwd()`.
+    default is `tempdir()`.
 
 ## References
 

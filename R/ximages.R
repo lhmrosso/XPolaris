@@ -34,6 +34,8 @@
 #' @export 
 #' @importFrom purrr map map2
 #' @importFrom magrittr "%>%" 
+#' @importFrom curl has_internet 
+#' @importFrom httr GET timeout http_error message_for_status
 #' @importFrom tidyr gather pivot_wider unnest nest separate
 #' @importFrom dplyr mutate case_when select group_by 
 #' ungroup filter row_number left_join
@@ -232,15 +234,50 @@ ximages <- function(locations,
 
   ## ROUTINE TO DOWNLOAD IMAGES
   
+  xdown <- function(ON,LC){
+    
+    try_GET <- function(x){
+      tryCatch(httr::GET(url = x, httr::timeout(600)),
+               error = function(e) conditionMessage(e),
+               warning = function(w) conditionMessage(w))
+    }
+    
+    is_response <- function(x){
+      class(x) == "response"
+    }
+    
+    # Internet connection
+    if(!curl::has_internet()){
+      message("No internet connection.")
+      return(invisible(NULL))
+    }
+    
+    # Timeout problems
+    resp <- try_GET(ON)
+    if(!is_response(resp)){
+      message(resp)
+      return(invisible(NULL))
+    }
+    
+    # Stop if status > 400
+    if(httr::http_error(resp)){ 
+      httr::message_for_status(resp)
+      return(invisible(NULL))
+    }
+    
+    download.file(url = ON, 
+                  destfile = LC, 
+                  mode = 'wb')
+    
+  }
+  
   if(nrow(temp3) > 0)
     
     dplyr::mutate(temp3, 
-                  download = 
-                    purrr::map2(.x = online_file, 
-                                .y = local_file,
-                                .f = ~download.file(url = .x, 
-                                                    destfile = .y,
-                                                    mode = 'wb')))
+                  download = purrr::map2(.x = online_file, 
+                                         .y = local_file,
+                                         .f = ~xdown(ON = .x, 
+                                                     LC = .y)))
   
   ## FUNCTION OUTPUT
   

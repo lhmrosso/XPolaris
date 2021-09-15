@@ -26,14 +26,17 @@ Suggests:
     maps,
     methods,
     rgdal,
+    rlang,
     rmarkdown,
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
 Depends: 
     R (>= 2.10)
 Imports:
+    curl,
     dplyr,
     ggplot2,
+    httr,
     magrittr,
     purrr,
     raster,

@@ -44,11 +44,28 @@ xsoil <- function(ximages_output,
                     purrr::map(~sf::st_as_sf(., coords = c('long', 'lat'),
                                              crs = 4326))) %>%
     
+    # Checking if all images were downloaded
+    
+    dplyr::mutate(checking = dplyr::case_when(file.exists(local_file) ~ 'yes', 
+                                              TRUE ~ 'no')) %>% 
+    
+    dplyr::filter(checking == 'yes') %>% 
+    
+    dplyr::select(-checking)
+  
+  ## IMPORTING DOWNLOADED
+  
+  temp2 <- data.frame(NULL)
+  
+  if(nrow(temp1) > 0)
+    
     # Importing images from local folders
+    
+    temp2 <- temp1 %>% 
     
     dplyr::mutate(raster = local_file %>% 
                     purrr::map(~raster::raster(.))) %>%
-
+    
     # Extracting values for the shape file points
     
     dplyr::mutate(extracts = purrr::map2(.x = raster, 
@@ -87,17 +104,19 @@ xsoil <- function(ximages_output,
   
   ## EXPORTING CSV
   
-  write.csv(temp1, 
-            
-            file.path(localPath,
-                      'POLARISOut',
-                      'xsoil_data.csv'),
-            
-            row.names = FALSE, 
-            na = '')
+  if(nrow(temp1) > 0)
+    
+    write.csv(temp2, 
+              
+              file.path(localPath,
+                        'POLARISOut',
+                        'xsoil_data.csv'),
+              
+              row.names = FALSE, 
+              na = '')
   
   ## FUNCTION OUTPUT
   
-  return(temp1)
+  return(temp2)
   
 }

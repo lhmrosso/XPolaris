@@ -260,7 +260,7 @@ ximages <- function(locations,
     }
     
     # Stop if status > 400
-    if(httr::http_error(resp)){ 
+    if(httr::http_error(resp)){
       httr::message_for_status(resp)
       return(invisible(NULL))
     }

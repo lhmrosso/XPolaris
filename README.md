@@ -11,6 +11,8 @@ status](https://travis-ci.com/lhmrosso/XPolaris.svg?branch=master)](https://trav
 status](https://ci.appveyor.com/api/projects/status/github/lhmrosso/XPolaris?branch=master&svg=true)](https://ci.appveyor.com/project/lhmrosso/XPolaris)
 [![Codecov test
 coverage](https://codecov.io/gh/lhmrosso/XPolaris/branch/master/graph/badge.svg)](https://codecov.io/gh/lhmrosso/XPolaris?branch=master)
+[![CRAN
+downloads](https://cranlogs.r-pkg.org/badges/grand-total/XPolaris)](https://cran.rstudio.com/web/packages/XPolaris/index.html)
 <!-- badges: end -->
 
 <img src="man/figures/xpolaris.png" height="300" align="right"/>

@@ -1,0 +1,25 @@
+citHeader("To cite XPolaris in publications use:")
+
+citEntry(
+  entry    = "Article",
+  title    = "XPolaris: an R-package to retrieve United States soil data at 30-meter resolution.",
+  author   = c(person("Luiz H.", "Moro Rosso"),
+               person("Andre F.", "de Borja Reis"),
+               person("Adrian A.", "Correndo"),
+               person("Ignacio A.", "Ciampitti")),
+  journal  = "BMC Research Notes",
+  year     = 2021,
+  volume   = 14,
+  number   = 1,
+  pages    = 327,
+  doi      = "10.1186/s13104-021-05729-y",
+  url      = "https://doi.org/10.1186/s13104-021-05729-y",
+  
+  textVersion = paste(
+  
+  "Moro Rosso, L.H., de Borja Reis, A.F., Correndo, A.A. et al.",
+  "XPolaris: an R-package to retrieve United States soil data at 30-meter resolution.",
+  "BMC Res Notes 14, 327 (2021). https://doi.org/10.1186/s13104-021-05729-y"
+
+  )
+)

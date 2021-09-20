@@ -1,6 +1,6 @@
 Package: XPolaris
 Title: Retrieving Soil Data from POLARIS
-Version: 1.0.1
+Version: 1.0.2
 Authors@R: c(
     person("Luiz", "Moro Rosso", email = "lhmrosso@ksu.edu", role = "cre"),
     person("Andre", "Borja Reis", email = "andrefbr@ksu.edu", role = "aut"),

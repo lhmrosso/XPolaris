@@ -1,12 +1,12 @@
 ## Resubmission
-This is a resubmission. In this version I have:
+This is a submission of a new version. In this version I have:
 
-* Provided a link to the used webservices in the DESCRIPTION file.
-* Removed commented lines on the examples of Rd function files.
-* Used tempdir() to write function outputs instead of getwd().
+* Avoided PDF manual due to issues with r-devel-windows-x86_64-gcc10-UCRT.
+* Added routine to check Internet resource and fail gracefully.
+* Included the package citation.
 
 ## Test environments
-- R-hub windows-x86_64-release (r-release)
+- R-hub windows-x86_64-devel (r-devel)
 - R-hub ubuntu-gcc-release (r-release)
 - R-hub fedora-clang-devel (r-devel)
 
@@ -16,12 +16,4 @@ This is a resubmission. In this version I have:
 * x86_64-w64-mingw32/x64 (64-bit) (on appveyor), R 4.1.0
 
 ## R CMD check results
-> On windows-x86_64-release (r-release), ubuntu-gcc-release (r-release), fedora-clang-devel (r-devel)
-  checking CRAN incoming feasibility ... NOTE
-  Maintainer: 'Luiz Moro Rosso <lhmrosso@ksu.edu>'
-  
-  New submission
-
-0 errors ✓ | 0 warnings ✓ | 1 note x
-
-* This is a new release.
+0 errors ✓ | 0 warnings ✓ | 0 notes ✓

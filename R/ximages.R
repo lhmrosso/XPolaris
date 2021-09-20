@@ -35,6 +35,7 @@
 #' @importFrom purrr map map2
 #' @importFrom magrittr "%>%" 
 #' @importFrom curl has_internet 
+#' @importFrom utils download.file 
 #' @importFrom httr GET timeout http_error message_for_status
 #' @importFrom tidyr gather pivot_wider unnest nest separate
 #' @importFrom dplyr mutate case_when select group_by 

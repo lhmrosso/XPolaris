@@ -34,7 +34,7 @@ xsoil <- function(ximages_output,
   # Binding variables to the function
   
   coordinates <- local_file <- shape <- extracts <- variables <- 
-    statistics <- layersdepths <- Values <- . <- NULL
+    statistics <- layersdepths <- Values <- . <- checking <- NULL
   
   temp1 <- ximages_output %>%
     

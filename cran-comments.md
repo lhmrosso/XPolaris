@@ -1,6 +1,7 @@
 ## Resubmission
-This is a submission of a new version. In this version I have:
+This is the resubmission of a new version. In this version I have:
 
+* Fixed the URLs for travis-ci and package (canonical form) in the README.
 * Avoided PDF manual due to issues with r-devel-windows-x86_64-gcc10-UCRT.
 * Added routine to check Internet resource and fail gracefully.
 * Included the package citation.

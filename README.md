@@ -6,7 +6,7 @@
 <!-- badges: start -->
 
 [![Travis build
-status](https://travis-ci.com/lhmrosso/XPolaris.svg?branch=master)](https://www.travis-ci.com/lhmrosso/XPolaris)
+status](https://travis-ci.com/lhmrosso/XPolaris.svg?branch=master)](https://app.travis-ci.com/github/lhmrosso/XPolaris)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/lhmrosso/XPolaris?branch=master&svg=true)](https://ci.appveyor.com/project/lhmrosso/XPolaris)
 [![Codecov test
